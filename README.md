@@ -23,3 +23,27 @@ WPF中的MVVM-DEMO
 #### 使用Command 和 Binding 之后 代码可读性高
 
 #### 
+
+## MVVM的缺点&不足：
+#### 1.事件机制不合理
+
+#### 2.窗口控制不方便
+#### 当你想从某个窗口跳转至某个窗口 或者 关闭当前窗口的时候,
+#### 参考项目中 WindowHelper 用来执行窗口跳转。
+#### 关闭窗口可以考虑
+````xml
+Command="{Binding CloseCommand}"
+CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Window}}"
+````
+````csharp
+/// <summary>
+/// 关闭窗口
+/// </summary>    
+public ICommand CloseCommand => new DelegateCommand(obj =>
+{
+    if (obj is Window window)
+    {
+        window.Close();
+     }
+});
+````
