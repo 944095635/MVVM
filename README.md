@@ -2,7 +2,7 @@
 
 
 #### MVVM （Model-View-ViewModel的简写）我的理解就是对UI和代码进行弱绑定。
-## ①强烈建议使用MVVM结构来开发WPF，在单人多人开发中都是非常好的选择
+# Ⅰ 强烈建议使用MVVM结构来开发WPF，在单人多人开发中都是非常好的选择
 #### 相对于传统的View+Click模式，MVVM优点足够多，缺点几乎没有。初期学习成本稍微高一些，熟练之后某些地方比传统winform模式开发速度更快。
 #### 可以从百度搜到一大堆的解释
 
@@ -16,7 +16,7 @@
 | DelegateCommand  |  命令接口实现       |⭐⭐|
 | Auth | 用户认证,可以在登录的时候记录认证信息    |⭐|
 
-## 项目中一般会使用到VS的智能提示(双tab代码段),我在项目中提供了2个代码段（请参考）。
+# Ⅱ 项目中一般会使用到VS的智能提示(双tab代码段),我在项目中提供了2个代码段（请参考）。
 #### VS->工具->代码片段管理器->语言（Csharp）->Visual C#
 #### 我的VS安装在C盘路径是:
 ````xml
@@ -31,7 +31,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC#\Snippets\20
 
 
 
-# MVVM的特点&优点：
+# Ⅲ MVVM的特点&优点：
 ### 1.分离开发?UI和业务代码分离,擅长UI的程序员可以单独编写UI,擅长业务的编写业务
 ####  View指的是XAML布局文件,
 ####  ViewModel相当于原本的xxx.cs文件
@@ -52,7 +52,7 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC#\Snippets\20
 
 
 
-# MVVM的缺点&不足：
+# ⅣMVVM的缺点&不足：
 ## 1.事件机制不合理
 #### Listbox滚动到底?拖拽文件事件?（非常不推荐使用,因为很少有项目需要用到事件。）
 
