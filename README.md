@@ -10,8 +10,8 @@
 
 | 类名                | 描述   |重要   |
 | :----:              | :---:          | :---:          |
-| Execute  |  UI调度器,可以在多线程中访问委托UI线程执行某些操作       |⭐⭐⭐⭐⭐|
-| ViewModelBase  |  ViewModel基类,想要支持刷新通知必须实现INotifyPropertyChanged,集合和单属性都需要触发OnPropertyChanged |⭐⭐⭐⭐|
+| ViewModelBase  |  ViewModel基类,想要支持刷新通知必须实现INotifyPropertyChanged,集合和单属性都需要触发OnPropertyChanged |⭐⭐⭐⭐⭐|
+| Execute  |  UI调度器,可以在多线程中访问委托UI线程执行某些操作       |⭐⭐⭐⭐|
 | WindowHelper  | 窗口跳转关闭等等 |⭐⭐⭐|
 | DelegateCommand  |  命令接口实现       |⭐⭐|
 | Auth | 用户认证,可以在登录的时候记录认证信息    |⭐|
@@ -57,17 +57,14 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC#\Snippets\20
 #### Listbox滚动到底?拖拽文件事件?（非常不推荐使用,因为很少有项目需要用到事件。）
 
 ````xml
-Nuget中 安装System.Windows.Interactivity
+Nuget中 安装System.Windows.Interactivity (具体使用方式可以百度)
 xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
-
-/// <summary>
-/// 关闭窗口
-/// </summary>    
- <i:Interaction.Triggers>
-        <i:EventTrigger EventName="GotFocus">
-            <i:InvokeCommandAction Command="{Binding Command}" />
-        </i:EventTrigger>
-    </i:Interaction.Triggers>
+ 
+<i:Interaction.Triggers>
+    <i:EventTrigger EventName="GotFocus">
+         <i:InvokeCommandAction Command="{Binding Command}" />
+    </i:EventTrigger>
+</i:Interaction.Triggers>
 ````
 
 
