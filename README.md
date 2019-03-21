@@ -40,14 +40,16 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
 /// <summary>
 /// 关闭窗口
 /// </summary>    
-<i:Interaction.Triggers>
-   <i:EventTrigger EventName="Checked">
-       <command:EventToCommand Command="{Binding CheckedCommand}"></command:EventToCommand>
-   </i:EventTrigger>
-   <i:EventTrigger EventName="Unchecked">
-       <command:EventToCommand Command="{Binding UnCheckedCommand}"></command:EventToCommand>
-   </i:EventTrigger>
-</i:Interaction.Triggers>
+ <i:Interaction.Triggers>
+        <i:EventTrigger EventName="LostFocus">
+            <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource AncestorType=Window},Path=DataContext.OnTextLostFocus}"
+                                   CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type TextBox}}}"/>
+        </i:EventTrigger>
+        <i:EventTrigger EventName="GotFocus">
+            <i:InvokeCommandAction Command="{Binding RelativeSource={RelativeSource AncestorType=Window},Path=DataContext.OnTextGotFocus}"
+                                   CommandParameter="{Binding RelativeSource={RelativeSource Mode=FindAncestor, AncestorLevel=1, AncestorType={x:Type TextBox}}}"/>
+        </i:EventTrigger>
+    </i:Interaction.Triggers>
 ````
 
 
