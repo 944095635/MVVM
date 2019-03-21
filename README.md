@@ -17,6 +17,12 @@
 | Auth | 用户认证,可以在登录的时候记录认证信息    |⭐|
 
 ## 项目中一般会使用到VS的智能提示(双tab代码段),我在项目中提供了2个代码段（请参考）。
+#### VS->工具->代码片段管理器->语言（Csharp）->Visual C#
+#### 我的VS安装在C盘路径是:
+````xml
+C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC#\Snippets\2052\Visual C#
+````
+
 | 简写                | 描述   |使用率   |
 | :----:              | :---:          | :---:          |
 | propfull  |  刷新属性       |⭐⭐⭐|
