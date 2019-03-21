@@ -5,7 +5,10 @@ WPF中的MVVM-DEMO
 #### 可以从百度搜到一大堆的解释，
 
 ## 总结起来，
-## MVVM的特点&优点：
+
+
+
+# MVVM的特点&优点：
 ### 1.分离开发?UI和业务代码分离,擅长UI的程序员可以单独编写UI,擅长业务的编写业务
 ####  View指的是XAML布局文件,
 ####  ViewModel相当于原本的xxx.cs文件
@@ -24,10 +27,31 @@ WPF中的MVVM-DEMO
 
 #### 
 
-## MVVM的缺点&不足：
-#### 1.事件机制不合理
 
-#### 2.窗口控制不方便
+
+# MVVM的缺点&不足：
+## 1.事件机制不合理
+#### Listbox滚动到底?拖拽文件事件?（非常不推荐使用,因为很少有项目需要用到事件。）
+
+````xml
+Nuget中 安装System.Windows.Interactivity
+xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Interactivity"
+
+/// <summary>
+/// 关闭窗口
+/// </summary>    
+<i:Interaction.Triggers>
+   <i:EventTrigger EventName="Checked">
+       <command:EventToCommand Command="{Binding CheckedCommand}"></command:EventToCommand>
+   </i:EventTrigger>
+   <i:EventTrigger EventName="Unchecked">
+       <command:EventToCommand Command="{Binding UnCheckedCommand}"></command:EventToCommand>
+   </i:EventTrigger>
+</i:Interaction.Triggers>
+````
+
+
+## 2.窗口控制不方便
 #### 当你想从某个窗口跳转至某个窗口 或者 关闭当前窗口的时候,
 #### 参考项目中 WindowHelper 用来执行窗口跳转。
 #### 关闭窗口可以考虑
