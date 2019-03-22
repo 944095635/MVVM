@@ -37,10 +37,14 @@
                         Width="*"
                         Binding="{Binding UserPwd}"
                         Header="密码" />
-                    <DataGridTemplateColumn Width="*" Header="VIP">
+                    <DataGridTemplateColumn Width="*" Header="编辑(ViewModel传参)">
                         <DataGridTemplateColumn.CellTemplate>
                             <DataTemplate>
-                                <CheckBox IsChecked="{Binding Vip}" />
+                                <Button
+                                    Width="60"
+                                    Command="{Binding DataContext.EditCommand, RelativeSource={RelativeSource Mode=FindAncestor, AncestorType=Page}}"
+                                    CommandParameter="{Binding}"
+                                    Content="编辑" />
                             </DataTemplate>
                         </DataGridTemplateColumn.CellTemplate>
                     </DataGridTemplateColumn>

@@ -1,6 +1,7 @@
 ﻿using DMSkin.Core.Common;
 using DMSkin.Core.MVVM;
 using MVVM.Model;
+using MVVM.View;
 using System.Collections.ObjectModel;
 using System.Threading;
 using System.Threading.Tasks;
@@ -86,6 +87,19 @@ namespace MVVM.ViewModel
         public ICommand StopCommand => new DelegateCommand(obj =>
         {
             cancellationTokenSource.Cancel();
+        });
+
+
+        /// <summary>
+        /// 编辑用户
+        /// </summary>    
+        public ICommand EditCommand => new DelegateCommand(obj =>
+        {
+            if (obj is User user)
+            {
+                EditWindow editWindow = new EditWindow(user);
+                editWindow.ShowDialog();
+            }
         });
 
         #endregion
