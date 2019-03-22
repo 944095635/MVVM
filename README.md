@@ -113,8 +113,9 @@ public ICommand CloseCommand => new DelegateCommand(obj =>
 });
 ````
 
-
-
+## 3.窗口传参
+#### A方案：构造函数传参，请参考代码中的传参方式
+#### B方案：参考项目中Auth类使用静态类传递参数（适合全局需要使用的参数，比如登录的用户信息）
 
 
 
