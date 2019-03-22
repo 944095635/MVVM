@@ -118,11 +118,8 @@ public ICommand CloseCommand => new DelegateCommand(obj =>
 #### B方案：参考项目中Auth类使用静态类传递参数（适合全局需要使用的参数，比如登录的用户信息）
 
 
-
-
-
-
-
+##
+##
 
 C# .NET (2000人) QQ交流群 76566523
 
