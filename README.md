@@ -40,6 +40,7 @@ public ICommand Command => new DelegateCommand(obj =>
 
 });
 
+
 private int name;
 /// <summary>
 /// 刷新属性 propfull
