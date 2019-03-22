@@ -31,6 +31,29 @@ C:\Program Files (x86)\Microsoft Visual Studio\2017\Professional\VC#\Snippets\20
 | command   | 命令        |⭐⭐|
 | propdp    | 依赖属性    |⭐|
 
+````csharp
+/// <summary>
+/// 命令 command
+/// </summary>    
+public ICommand Command => new DelegateCommand(obj =>
+{
+
+});
+
+private int name;
+/// <summary>
+/// 刷新属性 propfull
+/// </summary>
+public int Name
+{
+   get { return name; }
+   set
+       {
+         name = value;
+         OnPropertyChanged(nameof(Name));
+       }
+}
+````
 
 
 # Ⅲ MVVM的特点&优点：
