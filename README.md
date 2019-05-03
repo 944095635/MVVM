@@ -91,6 +91,10 @@ xmlns:i="clr-namespace:System.Windows.Interactivity;assembly=System.Windows.Inte
 </i:Interaction.Triggers>
 ````
 
+````xml
+你还可以使用DMSkin里面的Broadcast,这是一个事件通知器，可以传递数据。
+````
+
 
 ## 2.窗口控制不方便
 #### 当你想从某个窗口跳转至某个窗口 或者 关闭当前窗口的时候,
@@ -113,10 +117,14 @@ public ICommand CloseCommand => new DelegateCommand(obj =>
 });
 ````
 
+````xml
+你还可以使用DMSkin里面的Broadcast,这是一个事件通知器，可以传递数据。
+````
+
 ## 3.窗口传参
 #### A方案：构造函数传参，请参考代码中的传参方式
 #### B方案：参考项目中Auth类使用静态类传递参数（适合全局需要使用的参数，比如登录的用户信息）
-
+#### C方案：DMSkin中的Storage，这是一个数据存储器，可以保存全局的数据，在任何页面都可以读取到
 
 ##
 ##
