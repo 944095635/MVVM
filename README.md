@@ -1,5 +1,10 @@
 # MVVM
 
+## 如果你想使用完善的第三方mvvm库，请看另外的一个库：
+## https://github.com/944095635/Intro.Wpf
+
+## 当前的库属于简化版本，适合不喜欢使用太多第三方dll的人使用或学习MVVM的基础结构
+
 
 #### MVVM （Model-View-ViewModel的简写）我的理解就是对UI和代码进行弱绑定。
 # Ⅰ 强烈建议使用MVVM结构来开发WPF，在单人多人开发中都是非常好的选择
