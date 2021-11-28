@@ -2,8 +2,8 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>command</Title>
-			<Shortcut>command</Shortcut>
+			<Title>commandp</Title>
+			<Shortcut>commandp</Shortcut>
 			<Description>属性和支持字段的代码片段</Description>
 			<Author>Microsoft Corporation</Author>
 			<SnippetTypes>
@@ -22,13 +22,18 @@
 					<ToolTip>方法名</ToolTip>
 					<Default>MyProperty</Default>
 				</Literal>
+				<Literal>
+					<ID>type</ID>
+					<ToolTip>参数</ToolTip>
+					<Default>int</Default>
+				</Literal>
 			</Declarations>
 			<Code Language="csharp">
         <![CDATA[
   /// <summary>
   /// $title$
   /// </summary>    
-  public static ICommand $property$Command => new RelayCommand(() =>
+  public static ICommand $property$Command => new RelayCommand<$type$>(obj =>
   {
 
   });

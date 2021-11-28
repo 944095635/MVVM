@@ -2,8 +2,8 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>command</Title>
-			<Shortcut>command</Shortcut>
+			<Title>mvvm</Title>
+			<Shortcut>mvvm</Shortcut>
 			<Description>属性和支持字段的代码片段</Description>
 			<Author>Microsoft Corporation</Author>
 			<SnippetTypes>
@@ -12,26 +12,36 @@
 		</Header>
 		<Snippet>
 			<Declarations>
-				<Literal>
+			    <Literal>
 					<ID>title</ID>
 					<ToolTip>方法描述</ToolTip>
 					<Default>Title</Default>
 				</Literal>
 				<Literal>
+					<ID>type</ID>
+					<ToolTip>属性类型</ToolTip>
+					<Default>int</Default>
+				</Literal>
+				<Literal>
 					<ID>property</ID>
-					<ToolTip>方法名</ToolTip>
+					<ToolTip>属性名</ToolTip>
 					<Default>MyProperty</Default>
 				</Literal>
+				<Literal>
+					<ID>field</ID>
+					<ToolTip>支持此属性的变量</ToolTip>
+					<Default>_myProperty</Default>
+				</Literal>
 			</Declarations>
-			<Code Language="csharp">
-        <![CDATA[
+			<Code Language="csharp"><![CDATA[private $type$ $field$;
   /// <summary>
   /// $title$
-  /// </summary>    
-  public static ICommand $property$Command => new RelayCommand(() =>
-  {
-
-  });
+  /// </summary>
+	public $type$ $property$
+	{
+		get => $field$;
+		set => _ = Set(ref $field$, value);
+	}
 	$end$]]>
 			</Code>
 		</Snippet>

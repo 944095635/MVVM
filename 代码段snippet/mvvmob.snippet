@@ -2,8 +2,8 @@
 <CodeSnippets xmlns="http://schemas.microsoft.com/VisualStudio/2005/CodeSnippet">
 	<CodeSnippet Format="1.0.0">
 		<Header>
-			<Title>propfull</Title>
-			<Shortcut>propfull</Shortcut>
+			<Title>mvvmob</Title>
+			<Shortcut>mvvmob</Shortcut>
 			<Description>属性和支持字段的代码片段</Description>
 			<Author>Microsoft Corporation</Author>
 			<SnippetTypes>
@@ -12,6 +12,11 @@
 		</Header>
 		<Snippet>
 			<Declarations>
+			    <Literal>
+					<ID>title</ID>
+					<ToolTip>方法描述</ToolTip>
+					<Default>Title</Default>
+				</Literal>
 				<Literal>
 					<ID>type</ID>
 					<ToolTip>属性类型</ToolTip>
@@ -25,20 +30,18 @@
 				<Literal>
 					<ID>field</ID>
 					<ToolTip>支持此属性的变量</ToolTip>
-					<Default>myVar</Default>
+					<Default>_myProperty</Default>
 				</Literal>
 			</Declarations>
-			<Code Language="csharp"><![CDATA[private $type$ $field$;
+			<Code Language="csharp">
+	  <![CDATA[private ObservableCollection<$type$> $field$;
   /// <summary>
-  /// XXX
+  /// $title$
   /// </summary>
-	public $type$ $property$
+	public ObservableCollection<$type$> $property$
 	{
-		get { return $field$;}
-		set { 
-            $field$ = value;
-            OnPropertyChanged(nameof($property$));
-        }
+		get => $field$;
+		set => _ = Set(ref $field$, value);
 	}
 	$end$]]>
 			</Code>
